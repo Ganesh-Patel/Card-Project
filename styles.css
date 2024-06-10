@@ -1,0 +1,155 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.container {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#info-card {
+    text-align: center;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+    flex: 1;
+}
+
+#user-info span {
+    flex: 2;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: var(--btn-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: var(--btn-hover-color);
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #info-card, #info-card * {
+        visibility: visible;
+    }
+    #info-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+    }
+}
+
+/* Theme styles */
+[data-theme="dark"] {
+    --bg-color: #202024;
+    --text-color: #EAC645;
+    --card-bg-color: #333;
+    --btn-color: #4F2EE8;
+    --btn-hover-color: #5a5757;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f0f0;
+    --text-color: #202024;
+    --card-bg-color: #fff;
+    --btn-color: #4F2EE8;
+    --btn-hover-color: #EAC645;
+}
+
+/* Toggle switch styles */
+.header {
+    display: flex;
+    height: 8vh;
+    top: 0;
+    justify-content: flex-end;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #4F2EE8;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i {
+    color: #eecd4a;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
